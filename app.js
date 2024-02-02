@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function validateAndRedirect(page) {
-    const nameInput = document.getElementById('name');
+  const nameInput = document.getElementById('name');
+  
+  nameInput.addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+      validateAndRedirect('questionpage.html');
+    }
+  });
     const name = nameInput.value.trim();
 
     if (name) {
